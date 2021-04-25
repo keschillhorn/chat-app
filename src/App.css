@@ -217,22 +217,24 @@
 .wrapper {
   height: 100vh;
   width: 100%;
-  background: rgb(117, 84, 160);
-  background: linear-gradient(
-    90deg,
-    rgba(117, 84, 160, 1) 7%,
-    rgba(117, 84, 160, 1) 17%,
-    rgba(106, 95, 168, 1) 29%,
-    rgba(99, 103, 174, 1) 44%,
-    rgba(87, 116, 184, 1) 66%,
-    rgba(70, 135, 198, 1) 83%,
-    rgba(44, 163, 219, 1) 96%,
-    rgba(22, 188, 237, 1) 100%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .input {
@@ -241,7 +243,8 @@
   margin: 0 auto;
   padding: 1.5rem 2rem;
   border-radius: 0.2rem;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
   border: none;
   width: 90%;
   display: block;
@@ -257,17 +260,25 @@
 
 .title {
   text-align: center;
-  color: white;
+  color: #20272e;
   margin-bottom: 30px;
   width: 100%;
   font-size: 2.3em;
 }
 
+.subtitle {
+  text-align: center;
+  color: #20272e;
+  margin-bottom: 30px;
+  width: 100%;
+  font-size: 1.5em;
+}
+
 .button {
   border-radius: 4px;
   border: none;
-  background-color: white;
-  color: black;
+  background-color: #20272e;
+  color: white;
   text-align: center;
   text-transform: uppercase;
   font-size: 22px;
@@ -278,6 +289,11 @@
   margin: 5px;
   width: 90%;
 }
+
+.button:hover {
+  background-color: #007af3;
+}
+
 .button span {
   cursor: pointer;
   display: inline-block;
